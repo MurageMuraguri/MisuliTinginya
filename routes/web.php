@@ -12,5 +12,22 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('FE/welcome');
+});
+
+Route::get('/login.php', function () {
+    return view('FE/login');
+});
+
+Route::get('/home.php', function () {
+    return view('FE/home');
+});
+Route::get('/expenses.php', function () {
+    return view('FE/expenses');
+});
+Route::get('/income.php', function () {
+    return view('FE/income');
+});
+Route::get('/employee.php', function () {
+    return view('FE/employee');
 });
