@@ -237,3 +237,4 @@
 </body>
 
 </html>
+<?php /**PATH C:\Users\pavilion X360\Desktop\MisuliTinginya\resources\views/FE/income.blade.php ENDPATH**/ ?>
