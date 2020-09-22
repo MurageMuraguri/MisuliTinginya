@@ -14,22 +14,22 @@
 
   <!-- Nav Item - Dashboard -->
   <li class="nav-item active">
-    <a class="nav-link" href="index.php">
+    <a class="nav-link" href="home">
       <i class="fas fa-fw fa-tachometer-alt"></i>
       <span>Dashboard</span></a>
   </li>
   <li class="nav-item active">
-    <a class="nav-link" href="expenses.php">
+    <a class="nav-link" href="expenses">
     <i class="fas fa-money-bill-wave"></i>
       <span>Expenses page</span></a>
   </li>
   <li class="nav-item active">
-    <a class="nav-link" href="income.php">
+    <a class="nav-link" href="income">
     <i class="fas fa-cash-register"></i>
       <span>Income page</span></a>
   </li>
   <li class="nav-item active">
-    <a class="nav-link" href="employee.php">
+    <a class="nav-link" href="employee">
     <i class="fas fa-people-arrows"></i>
       <span>Employee page</span></a>
   </li>

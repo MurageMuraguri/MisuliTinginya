@@ -90,3 +90,4 @@
 </body>
 
 </html>
+<?php /**PATH C:\xampp\htdocs\MisuliTinginya\resources\views/FE/login.blade.php ENDPATH**/ ?>

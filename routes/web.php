@@ -31,3 +31,6 @@ Route::get('/income', function () {
 Route::get('/employee', function () {
     return view('FE.employee');
 });
+Route::get('/register', function () {
+    return view('FE.register');
+});
