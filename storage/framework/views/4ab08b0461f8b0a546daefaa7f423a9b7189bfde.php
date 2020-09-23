@@ -85,33 +85,41 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
-                      <th>Income Type</th>
-                      <th>Debit Date</th>
-                      <th>Income Description</th>
-                      <th>Income Amount</th>
-                      <th>Phone Number</th>
+                      <th>Product Type</th>
+                      <th>Quantity</th>
+                      <th>Price per unit</th>
+                      <th>Total Price</th>
+                      <th>Buyer contact</th>
+                      <th>Date of production</th>
+                      <th>Date of sale</th>
                       <th></th>
                     </tr>
                   </thead>
-                  <!-- <tfoot>
+                  <tfoot>
                     <tr>
-                    <th>Name</th>
-                    <th>Description</th>
-                    <th>Date</th>
-                    <th>Amount</th>
-                    <th>Salary</th>
-                    <th></th>
+                      <th>Product Type</th>
+                      <th>Quantity</th>
+                      <th>Price per unit</th>
+                      <th>Total Price</th>
+                      <th>Buyer contact</th>
+                      <th>Date of production</th>
+                      <th>Date of sale</th>
+                      <th></th>
                     </tr>
-                  </tfoot> -->
+                  </tfoot>
                   <tbody>
                     <tr>
-                      <td>Fresh Vegetables</td>
-                      <td>22/09/2020</td>
-                      <td>Income for Vegetables</td>
-                      <td>$2,500</td>
+                      <td>Milk</td>
+                      <td>20 units</td>
+                      <td>130</td>
+                      <td>260</td>
                       <td>+2547014390</td>
+                      <td>7/20/2020</td>
+                      <td>7/28/2020</td>
                       <td><a href="#add-modal" data-target="#add-modal" data-toggle="modal" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-b fa-sm text-white-50"></i> EDIT ENTRY</a>
-                        <a href="#deleteModal" data-target="#deleteModal" data-toggle="modal" class="d-none d-sm-inline-block btn btn-sm btn-danger shadow-sm"><i class="fas fa-b fa-sm text-white-50"></i> DELETE ENTRY</a>
+                        <br>
+                        <br>
+                          <a href="#deleteModal" data-target="#deleteModal" data-toggle="modal" class="d-none d-sm-inline-block btn btn-sm btn-danger shadow-sm"><i class="fas fa-b fa-sm text-white-50"></i> DELETE ENTRY</a>
                       </td>
                     </tr>
 
@@ -179,21 +187,25 @@
 
                  <div class="form-group row">
                    <div class="col-sm-6 mb-3 mb-sm-0">
-                     <input type="text" class="form-control form-control-user" id="incomeName" placeholder="Income Type" required>
+                     <input type="text" class="form-control form-control-user" id="incomeName" placeholder="product Type" required>
                    </div>
                    <div class="col-sm-6">
-                     <input type="date" class="form-control form-control-user" id="incomeDate" placeholder="Income Date" required>
+
+                     <input type="number" class="form-control form-control-user" id="incomeDate" placeholder="Quantity" required>
                    </div>
                  </div>
+
                  <div class="form-group">
-                   <input type="text" class="form-control form-control-user" id="incomeDescription" placeholder="Income Description" required>
+                   <input type="text" class="form-control form-control-user" id="incomeDescription" placeholder="Buyer contact" required>
                  </div>
                  <div class="form-group row">
                    <div class="col-sm-6 mb-3 mb-sm-0">
-                     <input type="number" class="form-control form-control-user" id="incomeAmount" placeholder="Income Amount" required>
+                    <label for=""> Date of production </label>
+                     <input type="Date" class="form-control form-control-user" id="incomeAmount" placeholder="production Date" required>
                    </div>
                    <div class="col-sm-6">
-                     <input type="number" class="form-control form-control-user" id="phoneNumber" placeholder="Phone Number" required>
+                     <label for=""> Date of Sale </label>
+                     <input type="Date" class="form-control form-control-user" id="phoneNumber" placeholder="Date of sale" required>
                    </div>
                  </div>
 

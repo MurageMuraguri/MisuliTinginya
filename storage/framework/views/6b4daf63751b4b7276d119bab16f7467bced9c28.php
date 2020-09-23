@@ -88,7 +88,9 @@
                       <th>Name</th>
                       <th>Description</th>
                       <th>Date</th>
-                      <th>Amount</th>
+                      <th>quantity</th>
+                      <th>cost per unit</th>
+                      <th>total cost</th>
                       <th></th>
                     </tr>
                   </thead>
@@ -97,7 +99,9 @@
                     <th>Name</th>
                     <th>Description</th>
                     <th>Date</th>
-                    <th>Amount</th>
+                    <th>quantity</th>
+                    <th>cost per unit</th>
+                    <th>total cost</th>
                     <th></th>
                     </tr>
                   </tfoot>
@@ -106,6 +110,8 @@
                       <td>Tiger Nixon</td>
                       <td>System Architect</td>
                       <td>Edinburgh</td>
+                      <td>61</td>
+                      <td>61</td>
                       <td>61</td>
                       <td><a href="#add-modal" data-target="#add-modal" data-toggle="modal" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-b fa-sm text-white-50"></i> EDIT ENTRY</a>
                         <a href="#deleteModal" data-target="#deleteModal" data-toggle="modal" class="d-none d-sm-inline-block btn btn-sm btn-danger shadow-sm"><i class="fas fa-b fa-sm text-white-50"></i> DELETE ENTRY</a>
@@ -185,7 +191,10 @@
                 </div>
                 <div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
-                    <input type="number" class="form-control form-control-user" id="expenseAmount" placeholder="Amount" required>
+                    <input type="number" class="form-control form-control-user" id="expenseAmount" placeholder="Cost per unit " required>
+                  </div>
+                  <div class="col-sm-6 mb-3 mb-sm-0">
+                    <input type="number" class="form-control form-control-user" id="expenseAmount" placeholder="quantity" required>
                   </div>
 
                 </div>

@@ -87,17 +87,23 @@
                                 <tr>
                                     <th>Name</th>
                                     <th>Role</th>
+                                    <th>Date of hiring</th>
+                                    <th>Contact</th>
                                     <th>ID Number</th>
                                     <th>Salary(KES)</th>
+                                    <th>Photo</th>
                                     <th></th>
                                 </tr>
                                 </thead>
                                 <tfoot>
                                 <tr>
-                                    <th>Name</th>
-                                    <th>Role</th>
-                                    <th>ID Number</th>
-                                    <th>Salary(KES)</th>
+                                  <th>Name</th>
+                                  <th>Role</th>
+                                  <th>Date of hiring</th>
+                                  <th>Contact</th>
+                                  <th>ID Number</th>
+                                  <th>Salary(KES)</th>
+                                  <th>photo</th>
                                     <th></th>
                                 </tr>
                                 </tfoot>
@@ -107,7 +113,12 @@
                                     <td>System Architect</td>
                                     <td>42069123</td>
                                     <td>10,000</td>
+                                    <td>10,000</td>
+                                    <td>10,000</td>
+                                    <td>10,000</td>
                                     <td><a href="#add-modal" data-target="#add-modal" data-toggle="modal" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-b fa-sm text-white-50"></i> EDIT ENTRY</a>
+                                      <br>
+                                      <br>
                                         <a href="#deleteModal" data-target="#deleteModal" data-toggle="modal" class="d-none d-sm-inline-block btn btn-sm btn-danger shadow-sm"><i class="fas fa-b fa-sm text-white-50"></i> DELETE ENTRY</a>
                                     </td>
                                 </tr>
@@ -180,6 +191,15 @@
                                 <input type="text" class="form-control form-control-user" id="employeeRole" placeholder="Role" required>
                             </div>
                         </div>
+                        <div class="form-group row">
+                            <div class="col-sm-6 mb-3 mb-sm-0">
+                              <label for=""> Date of hiring </label>
+                                <input type="date" class="form-control form-control-user" id="expenseName" placeholder="Date of hiring" required>
+                            </div>
+                            <div class="col-sm-6">
+                                <input type="text" class="form-control form-control-user" id="employeeRole" placeholder="contact" required>
+                            </div>
+                        </div>
                         <div class="form-group">
                             <input type="number" class="form-control form-control-user" id="employeeID" placeholder="ID Number" required>
                         </div>
@@ -188,7 +208,10 @@
                             <div class="col-sm-6 mb-3 mb-sm-0">
                                 <input type="number" class="form-control form-control-user" id="employeeSalary" placeholder="Salary" required>
                             </div>
-
+                            <div class="col-sm-6 mb-3 mb-sm-0">
+                              <label for="">Passport_photo</label>
+                                <input type="file" class="form-control form-control-user" id="employeeSalary" placeholder="Passport_photo" required>
+                            </div>
                         </div>
                     </div>
                     <div class="modal-footer">
