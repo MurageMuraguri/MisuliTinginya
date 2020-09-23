@@ -53,7 +53,7 @@
 
             <!-- Earnings (Monthly) Card Example -->
             <div class="col-xl-12 col-md-12 ">
-              <a href="#">
+              <a href="#add-modal" data-target="#add-modal" data-toggle="modal">
               <div class="card border-left-primary shadow h-100 py-2">
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
@@ -85,15 +85,15 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
-                      <th>Name</th>
-                      <th>Description</th>
-                      <th>Date</th>
-                      <th>Amount</th>
-                      <th>Salary</th>
+                      <th>Income Type</th>
+                      <th>Debit Date</th>
+                      <th>Income Description</th>
+                      <th>Income Amount</th>
+                      <th>Phone Number</th>
                       <th></th>
                     </tr>
                   </thead>
-                  <tfoot>
+                  <!-- <tfoot>
                     <tr>
                     <th>Name</th>
                     <th>Description</th>
@@ -102,18 +102,20 @@
                     <th>Salary</th>
                     <th></th>
                     </tr>
-                  </tfoot>
+                  </tfoot> -->
                   <tbody>
                     <tr>
-                      <td>Tiger Nixon</td>
-                      <td>System Architect</td>
-                      <td>Edinburgh</td>
-                      <td>61</td>
-                      <td>2011/04/25</td>
-                      <td><a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-b fa-sm text-white-50"></i> EDIT ENTRY</a>
-                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-danger shadow-sm"><i class="fas fa-b fa-sm text-white-50"></i> DELETE ENTRY</a>
+                      <td>Fresh Vegetables</td>
+                      <td>22/09/2020</td>
+                      <td>Income for Vegetables</td>
+                      <td>$2,500</td>
+                      <td>+2547014390</td>
+                      <td><a href="#add-modal" data-target="#add-modal" data-toggle="modal" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-b fa-sm text-white-50"></i> EDIT ENTRY</a>
+                        <a href="#deleteModal" data-target="#deleteModal" data-toggle="modal" class="d-none d-sm-inline-block btn btn-sm btn-danger shadow-sm"><i class="fas fa-b fa-sm text-white-50"></i> DELETE ENTRY</a>
                       </td>
                     </tr>
+
+
 
                   </tbody>
                 </table>
@@ -162,6 +164,65 @@
       </div>
     </div>
   </div>
+
+  <div class="modal fade" id="add-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+     <div class="modal-dialog" role="document">
+       <div class="modal-content">
+         <div class="modal-header">
+           <h5 class="modal-title" id="exampleModalLabel">Income Details</h5>
+           <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+             <span aria-hidden="true">×</span>
+           </button>
+         </div>
+         <form>
+         <div class="modal-body">
+
+                 <div class="form-group row">
+                   <div class="col-sm-6 mb-3 mb-sm-0">
+                     <input type="text" class="form-control form-control-user" id="incomeName" placeholder="Income Type" required>
+                   </div>
+                   <div class="col-sm-6">
+                     <input type="date" class="form-control form-control-user" id="incomeDate" placeholder="Income Date" required>
+                   </div>
+                 </div>
+                 <div class="form-group">
+                   <input type="text" class="form-control form-control-user" id="incomeDescription" placeholder="Income Description" required>
+                 </div>
+                 <div class="form-group row">
+                   <div class="col-sm-6 mb-3 mb-sm-0">
+                     <input type="number" class="form-control form-control-user" id="incomeAmount" placeholder="Income Amount" required>
+                   </div>
+                   <div class="col-sm-6">
+                     <input type="number" class="form-control form-control-user" id="phoneNumber" placeholder="Phone Number" required>
+                   </div>
+                 </div>
+
+         </div>
+         <div class="modal-footer">
+           <button type="submit" name="submit" id ="submit" class="btn btn-primary btn-user btn-block">Submit Income </button>
+         </div>
+         </form>
+       </div>
+     </div>
+   </div>
+
+   <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Are you sure?</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">Select "Delete" below if you are sure you want to delete the entry.</div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+            <a class="btn btn-primary" href="#">Delete</a>
+          </div>
+        </div>
+      </div>
+    </div>
 
   <!-- Bootstrap core JavaScript-->
   <script src="FE/vendor/jquery/jquery.min.js"></script>
