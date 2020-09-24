@@ -20,6 +20,7 @@ class expensesSeeder extends Seeder
          'expenses_cost_per_unit' => '20',
          'expenses_ttl_cost' => '40',
 // Here is where i need some php majic
+        'User_id' => '1',
          'created_at' => now(),
          'updated_at' => now()
 

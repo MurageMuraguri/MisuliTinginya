@@ -21,6 +21,8 @@ class CreateExpensesTable extends Migration
             $table->string('expenses_quantity');
             $table->string('expenses_cost_per_unit');
             $table->string('expenses_ttl_cost');
+            $table->unsignedBigInteger('User_id');
+            $table->foreign('User_id')->references('User_id')->on('user');
             $table->timestamps();
         });
     }

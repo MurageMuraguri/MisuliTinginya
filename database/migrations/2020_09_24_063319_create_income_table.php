@@ -22,6 +22,8 @@ class CreateIncomeTable extends Migration
             $table->string('buyer_contact');
             $table->string('Date_of_production');
             $table->string('Date_of_sale');
+            $table->unsignedBigInteger('User_id');
+            $table->foreign('User_id')->references('User_id')->on('user');
             $table->timestamps();
         });
     }

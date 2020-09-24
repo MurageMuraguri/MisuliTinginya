@@ -20,6 +20,7 @@ class incomeSeeder extends Seeder
           'buyer_contact' => '+2546782760',
           'Date_of_production' => '2020/09/10',
           'Date_of_sale' => '2020/11/10',
+          'User_id' => '1',
           'created_at' => now(),
           'updated_at' => now()
      ]);
