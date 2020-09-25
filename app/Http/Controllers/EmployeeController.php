@@ -46,7 +46,7 @@ class  EmployeeController extends Controller
         'id_number'=>$id,
         'Passport_photo'=>'uploads/'.$photo_name,
         'salary'=>$salary,
-        'User_id'=>1
+        'id'=>1
     ]);
   //   dd($photo_name);
         return redirect('employee')->with('status','New employee added');
@@ -116,4 +116,3 @@ class  EmployeeController extends Controller
         return redirect('employee')->with('status','Employee information deleted');
     }
 }
-

@@ -19,7 +19,7 @@ Route::get('/login', function () {
     return view('FE.login');
 });
 
-Route::get('/home', function () {
+Route::get('/dhome', function () {
     return view('FE.home');
 });
 /**
@@ -53,3 +53,7 @@ Route::get('/employee/delete/{Employee_id}', 'EmployeeController@delete');
 Route::get('/register', function () {
     return view('FE.register');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('FE.home');

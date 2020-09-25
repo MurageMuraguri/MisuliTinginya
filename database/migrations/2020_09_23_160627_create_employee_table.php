@@ -22,8 +22,8 @@ class CreateEmployeeTable extends Migration
             $table->string('id_number')->unique();
             $table->text('Passport_photo');
             $table->string('salary');
-            $table->unsignedBigInteger('User_id');
-            $table->foreign('User_id')->references('User_id')->on('user');
+            $table->unsignedBigInteger('id');
+            $table->foreign('id')->references('id')->on('users');
             $table->timestamps();
         });
     }

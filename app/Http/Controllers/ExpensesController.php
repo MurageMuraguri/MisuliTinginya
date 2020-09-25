@@ -39,7 +39,7 @@ class ExpensesController extends Controller
             'expenses_quantity' => $quantity,
             'expenses_cost_per_unit' => $amount,
             'expenses_ttl_cost' => $total,
-            'User_id' => 1
+            'id' => 1
         ]);
 
         return redirect('expenses')->with('status', 'Expense added');

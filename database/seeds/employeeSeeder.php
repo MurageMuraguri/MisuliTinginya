@@ -19,7 +19,7 @@ class employeeSeeder extends Seeder
           'id_number' => '3616526723',
           'Passport_photo' => 'uploads/a.png',
           'salary' => '20,000',
-          'User_id' => '1',
+          'id' => '1',
           'created_at' => now(),
           'updated_at' => now()
 
