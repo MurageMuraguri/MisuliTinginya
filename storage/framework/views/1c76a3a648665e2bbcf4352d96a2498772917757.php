@@ -13,12 +13,12 @@
   <title>MT - Expenses</title>
 
   <!-- Custom fonts for this template-->
-    <link href="{{URL::asset('FE/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
+    <link href="<?php echo e(URL::asset('FE/vendor/fontawesome-free/css/all.min.css')); ?>" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-    <link href="{{URL::asset('FE/vendor/jquery-confirm/dist/jquery-confirm.min.css')}}" rel="stylesheet">
+    <link href="<?php echo e(URL::asset('FE/vendor/jquery-confirm/dist/jquery-confirm.min.css')); ?>" rel="stylesheet">
     <script src="FE/vendor/jquery/jquery.min.js"></script>
   <!-- Custom styles for this template-->
-    <link href="{{URL::asset('FE/css/sb-admin-2.css')}}" rel="stylesheet">
+    <link href="<?php echo e(URL::asset('FE/css/sb-admin-2.css')); ?>" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.5.7/dist/css/uikit.min.css" />
 
 </head>
@@ -49,21 +49,22 @@
             <h1 class="h3 mb-0 text-gray-800">Expenses</h1>
 
           </div>
-            @if ($errors->any())
+            <?php if($errors->any()): ?>
                 <div class="alert alert-danger">
                     <ul>
-                        @foreach($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
+                        <?php $__currentLoopData = $errors->all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $error): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            <li><?php echo e($error); ?></li>
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     </ul>
                 </div>
-            @endif
+            <?php endif; ?>
 
-            @if(session('status'))
+            <?php if(session('status')): ?>
                 <div class="alert alert-success">
-                    {{session('status')}}
+                    <?php echo e(session('status')); ?>
+
                 </div>
-        @endif
+        <?php endif; ?>
           <!-- Content Row -->
           <div class="row">
 
@@ -121,19 +122,19 @@
                     </tr>
                   </tfoot>
                   <tbody>
-                  @foreach($expenses as $expense)
+                  <?php $__currentLoopData = $expenses; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $expense): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <tr>
-                      <td>{{$expense->expenses_name}}</td>
-                      <td>{{$expense->expenses_description}}</td>
-                      <td>{{\Carbon\Carbon::parse($expense->expenses_date)->format('d-M-Y')}}</td>
-                      <td>{{$expense->expenses_quantity}}</td>
-                      <td>{{$expense->expenses_cost_per_unit}}</td>
-                      <td>{{$expense->expenses_ttl_cost}}</td>
-                      <td><a  href="{{URL::to('expenses/edit')}}{{'/'.$expense->expenses_id}}"   class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-b fa-sm text-white-50"></i> EDIT ENTRY</a>
-                        <a data-title="Sure you wanna delete?"  href="{{URL::to('expenses/delete')}}{{'/'.$expense->expenses_id}}"  class="d-none d-sm-inline-block btn btn-sm btn-danger shadow-sm DEL"><i class="fas fa-b fa-sm text-white-50"></i> DELETE ENTRY</a>
+                      <td><?php echo e($expense->expenses_name); ?></td>
+                      <td><?php echo e($expense->expenses_description); ?></td>
+                      <td><?php echo e(\Carbon\Carbon::parse($expense->expenses_date)->format('d-M-Y')); ?></td>
+                      <td><?php echo e($expense->expenses_quantity); ?></td>
+                      <td><?php echo e($expense->expenses_cost_per_unit); ?></td>
+                      <td><?php echo e($expense->expenses_ttl_cost); ?></td>
+                      <td><a  href="<?php echo e(URL::to('expenses/edit')); ?><?php echo e('/'.$expense->expenses_id); ?>"   class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-b fa-sm text-white-50"></i> EDIT ENTRY</a>
+                        <a data-title="Sure you wanna delete?"  href="<?php echo e(URL::to('expenses/delete')); ?><?php echo e('/'.$expense->expenses_id); ?>"  class="d-none d-sm-inline-block btn btn-sm btn-danger shadow-sm DEL"><i class="fas fa-b fa-sm text-white-50"></i> DELETE ENTRY</a>
                       </td>
                     </tr>
-                   @endforeach
+                   <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                   </tbody>
                 </table>
               </div>
@@ -191,8 +192,8 @@
             <span aria-hidden="true">×</span>
           </button>
         </div>
-        <form enctype="multipart/form-data" role="form" method="POST" action="{{URL::to('expenses/save')}}">
-            @csrf
+        <form enctype="multipart/form-data" role="form" method="POST" action="<?php echo e(URL::to('expenses/save')); ?>">
+            <?php echo csrf_field(); ?>
         <div class="modal-body">
 
                 <div class="form-group row">
@@ -225,7 +226,7 @@
   </div>
 <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.7/dist/js/uikit.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.7/dist/js/uikit-icons.min.js"></script>
- <script src="{{URL::asset('FE/vendor/jquery-confirm/dist/jquery-confirm.min.js')}}"></script>
+ <script src="<?php echo e(URL::asset('FE/vendor/jquery-confirm/dist/jquery-confirm.min.js')); ?>"></script>
       <script type="text/javascript">
           $('a.DEL').confirm({
               content: "...",
@@ -250,3 +251,4 @@
 </body>
 
 </html>
+<?php /**PATH /home/mouss/Documents/skul/MisuliTinginya/resources/views/FE/expenses.blade.php ENDPATH**/ ?>

@@ -12,7 +12,7 @@ class incomeSeeder extends Seeder
     public function run()
     {
       DB::table('income')->insert([
-         'product_name' => 'Cheese',
+         'income_name' => 'Cheese',
          'quantity' => '20',
          'price_per_unit' => '28',
          'ttl_price' => '560',

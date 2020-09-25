@@ -11,10 +11,10 @@ class   Employee extends Model
 
     protected $fillable = ['Emp_name','Emp_role','Emp_contact','Date_of_hiring','id_number','Passport_photo','salary','User_id'];
     //relationships
-    public function users()
-    {
-        return $this->belongsTo('App\users');
-    }
+//    public function User()
+//    {
+//        return $this->belongsTo('App\User');
+//    }
 
 
 }

@@ -31,4 +31,4 @@ class PagesController extends Controller
       return view('FE/employee');
     }
 }
-}
+

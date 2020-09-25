@@ -84,7 +84,7 @@
                 </div>
               </div>
             </div>
-</a>
+            </a>
             <!-- Earnings (Monthly) Card Example -->
 
 
@@ -94,56 +94,40 @@
           <!-- Content Row -->
 <br>
           <div class="row">
+              <div class="col-md-3"></div>
+              <div class="col-md-6">
+              <form enctype="multipart/form-data" role="form" method="POST" action="{{URL::to('expenses/update')}}">
+                  @csrf
+                  <input type="hidden" value="{{$expensesEdit->expenses_id}}" name="expenses_id" />
+                  <div class="form-group row">
+                      <div class="col-sm-6 mb-3 mb-sm-0">
+                          <input value="{{$expensesEdit->expenses_name}}" type="text" class="form-control form-control-user" id="expenseName" name="expenseName" placeholder="Name" required>
+                      </div>
+                      <div class="col-sm-6">
+                          <input value="{{$expensesEdit->expenses_date}}" type="date" class="form-control form-control-user" id="expenseDate" name="expenseDate" placeholder="Date" required>
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <input value="{{$expensesEdit->expenses_description}}" type="text" class="form-control form-control-user" id="expenseDescription" name="expenseDescription" placeholder="Short Description" required>
+                  </div>
+                  <div class="form-group row">
+                      <div class="col-sm-6 mb-3 mb-sm-0">
+                          <input value="{{$expensesEdit->expenses_cost_per_unit}}"type="number" class="form-control form-control-user" id="expenseAmount" name="expenseAmount" placeholder="Cost per unit " required>
+                      </div>
+                      <div class="col-sm-6 mb-3 mb-sm-0">
+                          <input value="{{$expensesEdit->expenses_quantity}}"type="number" class="form-control form-control-user" id="expenseQuantity" name="expenseQuantity" placeholder="quantity" required>
+                      </div>
 
-            <div class="card-body">
-              <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                <thead>
-                    <tr>
-                      <th>Name</th>
-                      <th>Description</th>
-                      <th>Date</th>
-                      <th>Quantity</th>
-                      <th>Cost per unit</th>
-                      <th>Total cost</th>
-                      <th></th>
-                    </tr>
-                  </thead>
-                  <tfoot>
-                    <tr>
-                    <th>Name</th>
-                    <th>Description</th>
-                    <th>Date</th>
-                    <th>Quantity</th>
-                    <th>Cost per unit</th>
-                    <th>Total cost</th>
-                    <th></th>
-                    </tr>
-                  </tfoot>
-                  <tbody>
-                  @foreach($expenses as $expense)
-                    <tr>
-                      <td>{{$expense->expenses_name}}</td>
-                      <td>{{$expense->expenses_description}}</td>
-                      <td>{{\Carbon\Carbon::parse($expense->expenses_date)->format('d-M-Y')}}</td>
-                      <td>{{$expense->expenses_quantity}}</td>
-                      <td>{{$expense->expenses_cost_per_unit}}</td>
-                      <td>{{$expense->expenses_ttl_cost}}</td>
-                      <td><a  href="{{URL::to('expenses/edit')}}{{'/'.$expense->expenses_id}}"   class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-b fa-sm text-white-50"></i> EDIT ENTRY</a>
-                        <a data-title="Sure you wanna delete?"  href="{{URL::to('expenses/delete')}}{{'/'.$expense->expenses_id}}"  class="d-none d-sm-inline-block btn btn-sm btn-danger shadow-sm DEL"><i class="fas fa-b fa-sm text-white-50"></i> DELETE ENTRY</a>
-                      </td>
-                    </tr>
-                   @endforeach
-                  </tbody>
-                </table>
+                  </div>
+
+                  <button type="submit" name="submit" id ="submit" class="btn btn-primary btn-user btn-block">Edit Expense </button>
+              </form>
               </div>
-            </div>
-
+              <div class="col-md-3"></div>
 
         </div>
         <!-- /.container-fluid -->
 
-      </div>
       <!-- End of Main Content -->
 
       <!-- Footer -->
@@ -181,56 +165,12 @@
       </div>
     </div>
   </div>
- <!--Add Expense Modal-->
- <div class="modal fade" id="add-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Input Expense Details</h5>
-          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">×</span>
-          </button>
-        </div>
-        <form enctype="multipart/form-data" role="form" method="POST" action="{{URL::to('expenses/save')}}">
-            @csrf
-        <div class="modal-body">
 
-                <div class="form-group row">
-                  <div class="col-sm-6 mb-3 mb-sm-0">
-                    <input type="text" class="form-control form-control-user" id="expenseName" name="expenseName" placeholder="Name" required>
-                  </div>
-                  <div class="col-sm-6">
-                    <input type="date" class="form-control form-control-user" id="expenseDate" name="expenseDate" placeholder="Date" required>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <input type="text" class="form-control form-control-user" id="expenseDescription" name="expenseDescription" placeholder="Short Description" required>
-                </div>
-                <div class="form-group row">
-                  <div class="col-sm-6 mb-3 mb-sm-0">
-                    <input type="number" class="form-control form-control-user" id="expenseAmount" name="expenseAmount" placeholder="Cost per unit " required>
-                  </div>
-                  <div class="col-sm-6 mb-3 mb-sm-0">
-                    <input type="number" class="form-control form-control-user" id="expenseQuantity" name="expenseQuantity" placeholder="quantity" required>
-                  </div>
-
-                </div>
-        </div>
-        <div class="modal-footer">
-          <button type="submit" name="submit" id ="submit" class="btn btn-primary btn-user btn-block">Submit Expense </button>
-        </div>
-        </form>
       </div>
     </div>
   </div>
 <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.7/dist/js/uikit.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.7/dist/js/uikit-icons.min.js"></script>
- <script src="{{URL::asset('FE/vendor/jquery-confirm/dist/jquery-confirm.min.js')}}"></script>
-      <script type="text/javascript">
-          $('a.DEL').confirm({
-              content: "...",
-          });
-      </script>
   <!-- Bootstrap core JavaScript-->
   <script src="FE/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
