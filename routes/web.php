@@ -22,15 +22,23 @@ Route::get('/login', function () {
 Route::get('/home', function () {
     return view('FE.home');
 });
-Route::get('/expenses', function () {
+Route::get('  /expenses', function () {
     return view('FE.expenses');
 });
 Route::get('/income', function () {
     return view('FE.income');
 });
-Route::get('/employee', function () {
-    return view('FE.employee');
-});
+/**
+*EMPLOYEES
+*/
+
+Route::get('/employee', 'EmployeeController@all');
+Route::post('/employee/save', 'EmployeeController@insert');
+Route::get('/employee/edit/{Employee_id}', 'EmployeeController@edit');
+Route::post('/employee/update', 'EmployeeController@update');
+Route::get('/employee/delete/{Employee_id}', 'EmployeeController@delete');
+ //Route::get('/employee/add', 'EmployeeController@insert');
+
 Route::get('/register', function () {
     return view('FE.register');
 });

@@ -14,7 +14,7 @@
 
     <!-- Custom fonts for this template-->
     <link href="FE/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link href="{{URL::asset('FE/vendor/jquery-confirm/dist/jquery-confirm.min.css')}}" rel="stylesheet">
+    <link href="<?php echo e(URL::asset('FE/vendor/jquery-confirm/dist/jquery-confirm.min.css')); ?>" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
     <!-- Custom styles for this template-->
@@ -71,22 +71,22 @@
                                 </div>
                             </div>
                     </div>
-                </div>
-                    @if ($errors->any())
+                    <?php if($errors->any()): ?>
                         <div class="alert alert-danger">
                             <ul>
-                                @foreach($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
+                                <?php $__currentLoopData = $errors->all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $error): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                    <li><?php echo e($error); ?></li>
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                             </ul>
                         </div>
-                        @endif
+                        <?php endif; ?>
 
-                     @if(session('status'))
+                     <?php if(session('status')): ?>
                             <div class="alert alert-success">
-                                {{session('status')}}
+                                <?php echo e(session('status')); ?>
+
                             </div>
-                    @endif
+                    <?php endif; ?>
                     </a>
                     <!-- Earnings (Monthly) Card Example -->
 
@@ -127,22 +127,22 @@
                                 </tfoot>
                                 <tbody>
 
-                                    @foreach ($employees as $employee)
+                                    <?php $__currentLoopData = $employees; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $employee): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                      <tr>
-                                    <td>{{ucwords($employee->Emp_name)}}</td>
-                                    <td>{{ucwords($employee->Emp_role)}}</td>
-                                    <td>{{\Carbon\Carbon::parse($employee->created_at)->format('d/M/Y')}}</td>
-                                    <td>{{$employee->Emp_contact}}</td>
-                                    <td>{{$employee->id_number}}</td>
-                                    <td>{{$employee->salary}}</td>
+                                    <td><?php echo e(ucwords($employee->Emp_name)); ?></td>
+                                    <td><?php echo e(ucwords($employee->Emp_role)); ?></td>
+                                    <td><?php echo e(\Carbon\Carbon::parse($employee->created_at)->format('d/M/Y')); ?></td>
+                                    <td><?php echo e($employee->Emp_contact); ?></td>
+                                    <td><?php echo e($employee->id_number); ?></td>
+                                    <td><?php echo e($employee->salary); ?></td>
                                     <td>mboto</td>
-                                    <td><a href="{{URL::to('employee/edit')}}{{'/'.$employee->Employee_id}}"   class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-b fa-sm text-white-50"></i> EDIT ENTRY</a>
+                                    <td><a href="<?php echo e(URL::to('employee/edit')); ?><?php echo e('/'.$employee->Employee_id); ?>"   class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-b fa-sm text-white-50"></i> EDIT ENTRY</a>
                                       <br>
                                       <br>
-                                        <a data-title="Sure you wanna delete?"  href="{{URL::to('employee/delete')}}{{'/'.$employee->Employee_id}}"  class="d-none d-sm-inline-block btn btn-sm btn-danger shadow-sm DEL"><i class="fas fa-b fa-sm text-white-50"></i> DELETE ENTRY</a>
+                                        <a data-title="Sure you wanna delete?"  href="<?php echo e(URL::to('employee/delete')); ?><?php echo e('/'.$employee->Employee_id); ?>"  class="d-none d-sm-inline-block btn btn-sm btn-danger shadow-sm DEL"><i class="fas fa-b fa-sm text-white-50"></i> DELETE ENTRY</a>
                                     </td>
                                      </tr>
-                                    @endforeach
+                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
 
                                 </tbody>
@@ -202,8 +202,8 @@
                         <span aria-hidden="true">×</span>
                     </button>
                 </div>
-                <form enctype="multipart/form-data" role="form" method="POST" action="{{URL::to('employee/save')}}">
-                    @csrf
+                <form enctype="multipart/form-data" role="form" method="POST" action="<?php echo e(URL::to('employee/save')); ?>">
+                    <?php echo csrf_field(); ?>
                     <div class="modal-body">
 
                         <div class="form-group row">
@@ -264,7 +264,7 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.7/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.7/dist/js/uikit-icons.min.js"></script>
-    <script src="{{URL::asset('FE/vendor/jquery-confirm/dist/jquery-confirm.min.js')}}"></script>
+    <script src="<?php echo e(URL::asset('FE/vendor/jquery-confirm/dist/jquery-confirm.min.js')); ?>"></script>
     <script type="text/javascript">
         $('a.DEL').confirm({
             content: "...",
@@ -289,3 +289,4 @@
 </body>
 
 </html>
+<?php /**PATH /home/mouss/Documents/skul/MisuliTinginya/resources/views/FE/employee.blade.php ENDPATH**/ ?>
