@@ -37,10 +37,10 @@
       <div id="content">
 
         <!-- navbar -->
-<?php include 'FE/includes/nav.php'; ?>
-        <!-- navbar-->
+      
+      <!-- navbar-->
 
-        <!-- Begin Page Content -->
+          <?php $__env->startSection('content'); ?>
         <div class="container-fluid">
 
           <!-- Page Heading -->
@@ -286,4 +286,6 @@
 </body>
 
 </html>
-<?php /**PATH /home/mouss/Documents/skul/MisuliTinginya/resources/views/FE/income.blade.php ENDPATH**/ ?>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.nav', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /home/mouss/Documents/skul/MisuliTinginya/resources/views/FE/income.blade.php ENDPATH**/ ?>

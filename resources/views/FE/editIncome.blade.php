@@ -38,9 +38,10 @@
         <div id="content">
 
             <!-- navbar -->
-<?php include 'FE/includes/nav.php'; ?>
+<  @extends('layouts.nav')
         <!-- navbar-->
 
+        @section('content')
             <!-- Begin Page Content -->
             <div class="container-fluid">
 
@@ -196,3 +197,4 @@
 </body>
 
 </html>
+@endsection

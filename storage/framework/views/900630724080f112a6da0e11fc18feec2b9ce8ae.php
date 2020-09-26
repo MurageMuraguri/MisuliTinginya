@@ -37,10 +37,10 @@
       <div id="content">
 
         <!-- navbar -->
-      @extends('layouts.nav')
+      
         <!-- navbar-->
 
-          @section('content')
+          <?php $__env->startSection('content'); ?>
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
@@ -56,7 +56,7 @@
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Expenses</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">KSH {{$totalExpense}}</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">KSH <?php echo e($totalExpense); ?></div>
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -72,7 +72,7 @@
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Income</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">KSh {{$totalIncome}}</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">KSh <?php echo e($totalIncome); ?></div>
                     </div>
                     <div class="col-auto">
                         <i class="fas fa-money-bill-wave fa-2x text-gray-300"></i>
@@ -91,7 +91,7 @@
                       <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Employees</div>
                       <div class="row no-gutters align-items-center">
                         <div class="col-auto">
-                          <div class="h5 mb-0 font-weight-bold text-gray-800">{{$totalEmployee}}</div>
+                          <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo e($totalEmployee); ?></div>
                         </div>
                       </div>
                     </div>
@@ -224,7 +224,7 @@
           data: {
               labels: ["Expenses", "Income"],
               datasets: [{
-                  data: [{{$totalExpense}}, {{$totalIncome}}],
+                  data: [<?php echo e($totalExpense); ?>, <?php echo e($totalIncome); ?>],
                   backgroundColor: ['#F32013', '#1cc88a'],
                   hoverBackgroundColor: ['#CA0B00', '#17a673'],
                   hoverBorderColor: "rgba(234, 236, 244, 1)",
@@ -269,4 +269,6 @@
 </body>
 
 </html>
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.nav', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /home/mouss/Documents/skul/MisuliTinginya/resources/views/FE/dhome.blade.php ENDPATH**/ ?>

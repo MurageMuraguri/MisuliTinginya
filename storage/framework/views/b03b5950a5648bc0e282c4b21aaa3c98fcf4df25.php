@@ -34,6 +34,10 @@
         .bd-placeholder-img-lg {
           font-size: 3.5rem;
         }
+
+          .carousel-item{
+              height:750px;
+          }
       }
     </style>
     <!-- Custom styles for this template -->
@@ -48,7 +52,7 @@
 
     <!--Dropdown link-->
     <a class="py-2 d-none d-md-inline-block" href="#aboutUs">About Us</a>
-    <a class="py-2 d-none d-md-inline-block" href="#">Our Team</a>
+    <a class="py-2 d-none d-md-inline-block" href="#team">Our Team</a>
   </div>
 </nav>
 
@@ -65,24 +69,24 @@
 </div>
 
 <!-- Carousel -->
-<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel" >
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="FE/images/MT_Logo.jpg" class="d-block w-100" alt="...">
+      <img src="FE/images/MT_Logo.jpg" class="d-block w-100"  alt="...">
       <div class="carousel-caption d-none d-md-block">
         <h5>Welcome to MisuliTinginya - MT</h5>
         <p>Its our delight to serve farmers.</p>
       </div>
     </div>
     <div class="carousel-item">
-      <img src="https://images.unsplash.com/photo-1500595046743-cd271d694d30?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1053&q=80" height="50%" class="d-block w-100" alt="...">
+      <img src="https://images.unsplash.com/photo-1500595046743-cd271d694d30?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1053&q=80"  class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
         <h5>Manage your farm business anywhere</h5>
         <p>Gone are the days farmers worry about losing paperwork.</p>
       </div>
     </div>
     <div class="carousel-item">
-      <img src="https://images.unsplash.com/photo-1560493676-04071c5f467b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=968&q=80" class="d-block w-100" alt="...">
+      <img src="https://images.unsplash.com/photo-1560493676-04071c5f467b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=968&q=80"  class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
         <h5>Keep track of months of data</h5>
         <p>Have a system work out the math for you.</p>
@@ -134,16 +138,69 @@
   </div>
 </div>
 
+    <!-- Section: Team v.2 -->
+    <section class="team-section text-center my-5" id="team">
 
-<footer class="container py-5">
-  <div class="row">
-      <div class="col-md-2"></div>
-    <div class="col-md-8" style="align-content: center;">
-      <large>&copy; MisuliTinginya 2020</large>
-    </div>
-      <div class="col-md-2"></div>
+        <!-- Section heading -->
+        <h2 class="h1-responsive font-weight-bold my-5">The Misuli Tinginya Crew</h2>
+        <!-- Section description -->
+        <!-- Grid row -->
+        <div class="row">
 
-  </div>
+            <!-- Grid column -->
+            <div class="col-md-4 mb-md-0 mb-5">
+                <div class="avatar mx-auto">
+                </div>
+                <h4 class="font-weight-bold dark-grey-text my-4">Antony Mwala</h4>
+                <h6 class="text-uppercase grey-text mb-3"><strong>110345</strong></h6>
+            </div>
+            <!-- Grid column -->
+            <!-- Grid column -->
+            <div class="col-md-4">
+                <div class="avatar mx-auto">
+                </div>
+                <h4 class="font-weight-bold dark-grey-text my-4">Stephen Muroki</h4>
+                <h6 class="text-uppercase grey-text mb-3"><strong>102480</strong></h6>
+            </div>
+            <!-- Grid column -->
+
+            <div class="col-md-4">
+                <div class="avatar mx-auto">
+                </div>
+                <h4 class="font-weight-bold dark-grey-text my-4">Jeremy Matayo</h4>
+                <h6 class="text-uppercase grey-text mb-3"><strong>110913</strong></h6>
+            </div>
+
+            <div class="col-md-4">
+                <div class="avatar mx-auto">
+
+                </div>
+                <h4 class="font-weight-bold dark-grey-text my-4">Brian Mulei</h4>
+                <h6 class="text-uppercase grey-text mb-3"><strong>110321</strong></h6>
+            </div>
+
+            <div class="col-md-4">
+                <div class="avatar mx-auto">
+                </div>
+                <h4 class="font-weight-bold dark-grey-text my-4">Amos Muraguri</h4>
+                <h6 class="text-uppercase grey-text mb-3"><strong>110467</strong></h6>
+            </div>
+
+
+            <div class="col-md-4">
+                <div class="avatar mx-auto">
+                </div>
+                <h4 class="font-weight-bold dark-grey-text my-4">Steven Kabari</h4>
+                <h6 class="text-uppercase grey-text mb-3"><strong>105249</strong></h6>
+            </div>
+        </div>
+        <!-- Grid row -->
+
+    </section>
+
+<footer>
+    <large><b>&copy; MisuliTinginya 2020</b></large>
+
 </footer>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
       <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="assets/dist/js/bootstrap.bundle.min.js"></script>

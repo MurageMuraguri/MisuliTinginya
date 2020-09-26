@@ -40,10 +40,10 @@
         <div id="content">
 
             <!-- navbar -->
-            <?php include 'FE/includes/nav.php'; ?>
-            <!-- navbar-->
+        @extends('layouts.nav')
+        <!-- navbar-->
 
-            <!-- Begin Page Content -->
+            @section('content')
             <div class="container-fluid">
 
                 <!-- Page Heading -->
@@ -290,3 +290,4 @@
 </body>
 
 </html>
+@endsection

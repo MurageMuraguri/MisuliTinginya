@@ -19,10 +19,7 @@ Route::get('/login', function () {
     return view('FE.login');
 });
 
-Route::get('/dhome', function () {
-    return view('FE.home');
-});
-
+Route::get('/dhome', 'DhomeController@all');
 
 
 /**
@@ -30,7 +27,7 @@ Route::get('/dhome', function () {
  */
 Route::get('/expenses', 'ExpensesController@all');
 Route::post('/expenses/save','ExpensesController@insert');
-Route::get('/expenses/delete/{expenses_id}', 'ExpensesController@delete');
+Route::get('/expenses/delete/{expenses_id}','ExpensesController@delete');
 Route::get('/expenses/edit/{expenses_id}', 'ExpensesController@edit');
 Route::post('/expenses/update', 'ExpensesController@update');
 
@@ -45,15 +42,15 @@ Route::post('/income/update', 'IncomeController@update');
 
 
 /**
-*------------EMPLOYEES----------
-*/
+ *------------EMPLOYEES----------
+ */
 
 Route::get('/employee', 'EmployeeController@all');
 Route::post('/employee/save', 'EmployeeController@insert');
 Route::get('/employee/edit/{Employee_id}', 'EmployeeController@edit');
 Route::post('/employee/update', 'EmployeeController@update');
 Route::get('/employee/delete/{Employee_id}', 'EmployeeController@delete');
- //Route::get('/employee/add', 'EmployeeController@insert');
+//Route::get('/employee/add', 'EmployeeController@insert');
 
 /**
  *
@@ -65,3 +62,6 @@ Route::get('/register', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('FE.home');
+
+Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
+
