@@ -47,13 +47,13 @@
     <!--Dropdown link-->
 
     <!--Dropdown link-->
-    <a class="py-2 d-none d-md-inline-block" href="aboutus.php">About Us</a>
-    <a class="py-2 d-none d-md-inline-block" href="contactus.php">Contact Us</a>
+    <a class="py-2 d-none d-md-inline-block" href="#aboutUs">About Us</a>
+    <a class="py-2 d-none d-md-inline-block" href="#">Our Team</a>
   </div>
 </nav>
 
 <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
-  <div class="col-md-5 p-lg-5 mx-auto my-5">
+  <div class="col-md-5 p-lg-5 mx-auto my-5" id="aboutUs">
     <h1 class="display-4 font-weight-normal">MisuliTinginya</h1>
     <p class="lead font-weight-normal">We aim to provide the best services to farmers by
     creating a data store that stores all their farm inputs and generates reports based of
@@ -137,28 +137,11 @@
 
 <footer class="container py-5">
   <div class="row">
-    <div class="col-12 col-md">
-      <small class="d-block mb-3 text-muted">&copy; MisuliTinginya 2020</small>
+      <div class="col-md-2"></div>
+    <div class="col-md-8" style="align-content: center;">
+      <large>&copy; MisuliTinginya 2020</large>
     </div>
-
-    <div class="col-6 col-md">
-      <h5>Features</h5>
-      <ul class="list-unstyled text-small">
-        <li><a class="text-muted" href="#">Upgrade plan</a></li>
-        <li><a class="text-muted" href="#">Coming soon</a></li>
-        <li><a class="text-muted" href="#">New releases</a></li>
-      </ul>
-    </div>
-
-    <div class="col-6 col-md">
-      <h5>About</h5>
-      <ul class="list-unstyled text-small">
-        <li><a class="text-muted" href="#">Team</a></li>
-        <li><a class="text-muted" href="#">Locations</a></li>
-        <li><a class="text-muted" href="#">Privacy</a></li>
-        <li><a class="text-muted" href="#">Terms</a></li>
-      </ul>
-    </div>
+      <div class="col-md-2"></div>
 
   </div>
 </footer>

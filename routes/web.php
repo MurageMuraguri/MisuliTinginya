@@ -23,6 +23,8 @@ Route::get('/dhome', function () {
     return view('FE.home');
 });
 
+
+
 /**
  *------------EXPENSES----------
  */
