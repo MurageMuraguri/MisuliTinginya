@@ -125,18 +125,6 @@
                                     <div class="col-sm-6 mb-3 mb-sm-0">
                                         <input value="{{$employeeEdit->salary}}" type="number" class="form-control form-control-user" name="employeeSalary" id="employeeSalary" placeholder="Salary" required>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <p>Current Image</p>
-                                            <img style="width:70%;" alt="{{$employeeEdit->Emp_name}}" src="{{URL::asset($employeeEdit->Passport_photo)}}"/>
-                                        </div>
-                                        <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="employeePic">Upload new</label>
-                                        <input type="file" class="form-control form-control-user" name="employeePic" id="employeePic" placeholder="Passport_photo">
-                                    </div>
-                                        </div>
-                                    </div>
                                 </div>
                             <div class="form-group">
                                 <button type="submit" name="submit" id ="submit" class="btn btn-primary btn-user btn-block">Edit Employee Record </button>

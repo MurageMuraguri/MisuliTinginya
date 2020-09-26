@@ -232,10 +232,6 @@
                             <div class="col-sm-6 mb-3 mb-sm-0">
                                 <input type="number" class="form-control form-control-user" name="employeeSalary" id="employeeSalary" placeholder="Salary" required>
                             </div>
-                            <div class="col-sm-6 mb-3 mb-sm-0">
-                              <label for="employeePic">Passport_photo</label>
-                                <input type="file" class="form-control form-control-user" name="employeePic" id="employeePic" placeholder="Passport_photo" required>
-                            </div>
                         </div>
                     </div>
                     <div class="modal-footer">

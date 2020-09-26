@@ -29,8 +29,7 @@ class  EmployeeController extends Controller
             'employeeHire'=>'required',
             'employeeContact'=>'required|alpha_num',
             'employeeID'=>'required|alpha_num',
-            'employeeSalary'=>'required|alpha_num',
-            'employeePic'=>'required|image'
+            'employeeSalary'=>'required|alpha_num'
         ]);
 
        $name = $request->input('employeeName');
@@ -39,11 +38,11 @@ class  EmployeeController extends Controller
        $contact = $request->input('employeeContact');
        $id = $request->input('employeeID');
        $salary = $request->input('employeeSalary');
-       $pic = $request->file('employeePic');
 
-     $photo_name = str_replace(' ', '', $name).'_'.time().'.'.$pic->getClientOriginalExtension();
 
-     $pic -> move(public_path('uploads',$photo_name));
+
+
+
 
     $newEntry = Employee::create([
          'Emp_name'=>$name,
@@ -51,7 +50,7 @@ class  EmployeeController extends Controller
          'Emp_contact'=>$contact,
          'Date_of_hiring'=>$hireDate,
         'id_number'=>$id,
-        'Passport_photo'=>'uploads/'.$photo_name,
+        'Passport_photo'=>'not established',
         'salary'=>$salary,
         'id'=>Auth::id()
     ]);
@@ -72,8 +71,7 @@ class  EmployeeController extends Controller
              'employeeHire'=>'required',
              'employeeContact'=>'required|alpha_num',
              'employeeID'=>'required|alpha_num',
-             'employeeSalary'=>'required|alpha_num',
-             'employeePic'=>'image'
+             'employeeSalary'=>'required|alpha_num'
          ]);
 
          $idEm = $request->input('Employee_id');
@@ -83,15 +81,6 @@ class  EmployeeController extends Controller
          $contact = $request->input('employeeContact');
          $id = $request->input('employeeID');
          $salary = $request->input('employeeSalary');
-         $pic = $request->file('employeePic');
-
-         $photo_name='';
-
-         if(isset($pic)){
-             $photo_name = str_replace(' ', '', $name).'_'.time().'.'.$pic->getClientOriginalExtension();
-
-             $pic -> move(public_path('uploads',$photo_name));
-         }
 
 
          $updateEntry = Employee::find($idEm);
@@ -104,9 +93,6 @@ class  EmployeeController extends Controller
                     $updateEntry->id_number = $id;
                     $updateEntry -> salary = $salary;
 
-                    if($photo_name!=""){
-                        $updateEntry->Passport_photo = $photo_name;
-                    }
             $updateEntry->save();
 
 
