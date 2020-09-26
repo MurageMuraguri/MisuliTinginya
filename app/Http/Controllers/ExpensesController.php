@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Expenses;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ExpensesController extends Controller
 {
@@ -13,7 +14,7 @@ class ExpensesController extends Controller
     }
     public function all()
     {
-        $expenses = Expenses::all();
+        $expenses = Expenses::where('id',Auth::id())->get();
 
         return view('FE.expenses', ['expenses' => $expenses]);
     }
@@ -43,7 +44,7 @@ class ExpensesController extends Controller
             'expenses_quantity' => $quantity,
             'expenses_cost_per_unit' => $amount,
             'expenses_ttl_cost' => $total,
-            'id' => 1
+            'id' => Auth::id()
         ]);
 
         return redirect('expenses')->with('status', 'Expense added');

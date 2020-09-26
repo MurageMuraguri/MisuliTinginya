@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Employee;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class  EmployeeController extends Controller
 {
@@ -12,7 +13,9 @@ class  EmployeeController extends Controller
     $this->middleware('auth');
 }
     public function all(){
-        $employees = Employee::all();
+        $employees = Employee::where('id',Auth::id())->get();
+
+      //  dd($employees);
 
         return view('FE.employee',['employees' => $employees]);
     }
@@ -50,7 +53,7 @@ class  EmployeeController extends Controller
         'id_number'=>$id,
         'Passport_photo'=>'uploads/'.$photo_name,
         'salary'=>$salary,
-        'id'=>1
+        'id'=>Auth::id()
     ]);
   //   dd($photo_name);
         return redirect('employee')->with('status','New employee added');

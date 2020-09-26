@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Income;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class IncomeController extends Controller
 {
@@ -14,7 +15,7 @@ class IncomeController extends Controller
 
 
     public function all(){
-        $income = Income::all();
+        $income = Income::where('id',Auth::id())->get();
 
         return view('FE.income', ['income' => $income]);
     }
@@ -36,7 +37,7 @@ class IncomeController extends Controller
         $saleDate = $request->input('saleDate');
         $price = $request->input('price');
         $total = $quantity*$price;
-        $id = 1;
+        $id = Auth::id();
 
         $newEntry = Income::create([
             'income_name'=>$productType,

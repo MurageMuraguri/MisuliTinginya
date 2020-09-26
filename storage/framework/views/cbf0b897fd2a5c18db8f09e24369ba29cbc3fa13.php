@@ -9,7 +9,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-   <link rel="icon" href="FE/images/cow.ico">
 
   <title>MT - Home</title>
 
@@ -37,7 +36,6 @@
       <div id="content">
 
         <!-- navbar -->
-
 <?php include 'FE/includes/nav.php'; ?>
         <!-- navbar-->
 
@@ -45,7 +43,10 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
-
+          <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+            <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+          </div>
 
           <!-- Content Row -->
           <div class="row">
@@ -357,7 +358,7 @@
         <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="/">Logout</a>
+          <a class="btn btn-primary" href="login.html">Logout</a>
         </div>
       </div>
     </div>

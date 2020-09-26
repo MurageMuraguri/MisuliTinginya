@@ -139,7 +139,7 @@
   <div class="row">
       <div class="col-md-2"></div>
     <div class="col-md-8" style="align-content: center;">
-      <large class="d-block mb-3 text-muted">&copy; MisuliTinginya 2020</large>
+      <large>&copy; MisuliTinginya 2020</large>
     </div>
       <div class="col-md-2"></div>
 
