@@ -139,7 +139,7 @@
   <div class="row">
       <div class="col-md-2"></div>
     <div class="col-md-8" style="align-content: center;">
-      <large>&copy; MisuliTinginya 2020</large>
+      <large class="d-block mb-3 text-muted">&copy; MisuliTinginya 2020</large>
     </div>
       <div class="col-md-2"></div>
 
@@ -148,3 +148,4 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
       <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="assets/dist/js/bootstrap.bundle.min.js"></script>
 </html>
+<?php /**PATH /home/mouss/Documents/skul/MisuliTinginya/resources/views/FE/welcome.blade.php ENDPATH**/ ?>

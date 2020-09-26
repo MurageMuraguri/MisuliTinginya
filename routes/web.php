@@ -22,20 +22,26 @@ Route::get('/login', function () {
 Route::get('/dhome', function () {
     return view('FE.home');
 });
+
 /**
  *------------EXPENSES----------
  */
-Route::get('  /expenses', 'ExpensesController@all');
+Route::get('/expenses', 'ExpensesController@all');
 Route::post('/expenses/save','ExpensesController@insert');
 Route::get('/expenses/delete/{expenses_id}', 'ExpensesController@delete');
 Route::get('/expenses/edit/{expenses_id}', 'ExpensesController@edit');
 Route::post('/expenses/update', 'ExpensesController@update');
+
 /**
  *------------INCOME----------
  */
-Route::get('/income', function () {
-    return view('FE.income');
-});
+Route::get('/income', 'IncomeController@all');
+Route::post('/income/save','IncomeController@insert');
+Route::get('/income/delete/{income_id}', 'IncomeController@delete');
+Route::get('/income/edit/{income_id}', 'IncomeController@edit');
+Route::post('/income/update', 'IncomeController@update');
+
+
 /**
 *------------EMPLOYEES----------
 */

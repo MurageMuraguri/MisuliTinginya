@@ -27,7 +27,7 @@
 <!-- Page Wrapper -->
 <div id="wrapper">
     <!-- sidenav -->
-    <?php include'FE/includes/sidenav.php';?>
+    <?php //include'FE/includes/sidenav.php';?>
 
     <!-- sidenav -->
 
@@ -47,7 +47,7 @@
 
                 <!-- Page Heading -->
                 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                    <h1 class="h3 mb-0 text-gray-800">Employee</h1>
+                    <h1 class="h3 mb-0 text-gray-800">Employee edit</h1>
 
                 </div>
 

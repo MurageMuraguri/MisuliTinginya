@@ -15,7 +15,7 @@
   <!-- Custom fonts for this template-->
   <link href="FE/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-    <link href="{{URL::asset('FE/vendor/jquery-confirm/dist/jquery-confirm.min.css')}}" rel="stylesheet">
+    <link href="<?php echo e(URL::asset('FE/vendor/jquery-confirm/dist/jquery-confirm.min.css')); ?>" rel="stylesheet">
     <script src="FE/vendor/jquery/jquery.min.js"></script>
   <!-- Custom styles for this template-->
   <link href="FE/css/sb-admin-2.min.css" rel="stylesheet">
@@ -48,21 +48,22 @@
             <h1 class="h3 mb-0 text-gray-800">Income</h1>
 
           </div>
-            @if ($errors->any())
+            <?php if($errors->any()): ?>
                 <div class="alert alert-danger">
                     <ul>
-                        @foreach($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
+                        <?php $__currentLoopData = $errors->all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $error): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            <li><?php echo e($error); ?></li>
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     </ul>
                 </div>
-            @endif
+            <?php endif; ?>
 
-            @if(session('status'))
+            <?php if(session('status')): ?>
                 <div class="alert alert-success">
-                    {{session('status')}}
+                    <?php echo e(session('status')); ?>
+
                 </div>
-        @endif
+        <?php endif; ?>
           <!-- Content Row -->
           <div class="row">
 
@@ -123,22 +124,22 @@
                     </tr>
                   </tfoot>
                   <tbody>
-                        @foreach($income as $in)
+                        <?php $__currentLoopData = $income; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $in): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                             <tr>
-                      <td>{{$in->income_name}}</td>
-                      <td>{{$in->quantity}}</td>
-                      <td>{{$in->price_per_unit}}</td>
-                      <td>{{$in->ttl_price}}</td>
-                      <td>{{$in->buyer_contact}}</td>
-                      <td>{{\Carbon\Carbon::parse($in->Date_of_production)->format('d-M-Y')}}</td>
-                      <td>{{\Carbon\Carbon::parse($in->Date_of_sale)->format('d-M-Y')}}</td>
-                      <td><a href="{{URL::to('income/edit')}}{{'/'.$in->income_id}}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-b fa-sm text-white-50"></i> EDIT ENTRY</a>
+                      <td><?php echo e($in->income_name); ?></td>
+                      <td><?php echo e($in->quantity); ?></td>
+                      <td><?php echo e($in->price_per_unit); ?></td>
+                      <td><?php echo e($in->ttl_price); ?></td>
+                      <td><?php echo e($in->buyer_contact); ?></td>
+                      <td><?php echo e(\Carbon\Carbon::parse($in->Date_of_production)->format('d-M-Y')); ?></td>
+                      <td><?php echo e(\Carbon\Carbon::parse($in->Date_of_sale)->format('d-M-Y')); ?></td>
+                      <td><a href="<?php echo e(URL::to('income/edit')); ?><?php echo e('/'.$in->income_id); ?>" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-b fa-sm text-white-50"></i> EDIT ENTRY</a>
                         <br>
                         <br>
-                          <a data-title="Sure you wanna delete?"  href="{{URL::to('income/delete')}}{{'/'.$in->income_id}}" class="d-none d-sm-inline-block btn btn-sm btn-danger shadow-sm DEL"><i class="fas fa-b fa-sm text-white-50"></i> DELETE ENTRY</a>
+                          <a data-title="Sure you wanna delete?"  href="<?php echo e(URL::to('income/delete')); ?><?php echo e('/'.$in->income_id); ?>" class="d-none d-sm-inline-block btn btn-sm btn-danger shadow-sm DEL"><i class="fas fa-b fa-sm text-white-50"></i> DELETE ENTRY</a>
                       </td>
                     </tr>
-                            @endforeach
+                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
 
 
@@ -199,8 +200,8 @@
              <span aria-hidden="true">×</span>
            </button>
          </div>
-         <form enctype="multipart/form-data" role="form" method="POST" action="{{URL::to('income/save')}}">
-             @csrf
+         <form enctype="multipart/form-data" role="form" method="POST" action="<?php echo e(URL::to('income/save')); ?>">
+             <?php echo csrf_field(); ?>
          <div class="modal-body">
 
                  <div class="form-group row">
@@ -262,7 +263,7 @@
   <!-- Bootstrap core JavaScript-->
   <script src="FE/vendor/jquery/jquery.min.js"></script>
   <script src="FE/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-      <script src="{{URL::asset('FE/vendor/jquery-confirm/dist/jquery-confirm.min.js')}}"></script>
+      <script src="<?php echo e(URL::asset('FE/vendor/jquery-confirm/dist/jquery-confirm.min.js')); ?>"></script>
       <script type="text/javascript">
           $('a.DEL').confirm({
               content: "...",
@@ -285,3 +286,4 @@
 </body>
 
 </html>
+<?php /**PATH /home/mouss/Documents/skul/MisuliTinginya/resources/views/FE/income.blade.php ENDPATH**/ ?>

@@ -70,13 +70,13 @@
 
             <!-- Earnings (Monthly) Card Example -->
             <div class="col-xl-12 col-md-12 ">
-              <a href="#add-modal" data-target="#add-modal" data-toggle="modal">
+
               <div class="card border-left-primary shadow h-100 py-2">
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
 
-                      <div class="h5 mb-0 font-weight-bold text-blue-1900">Enter expenses</div>
+                      <div class="h5 mb-0 font-weight-bold text-blue-1900">Edit <?php echo e($expensesEdit->expenses_name); ?> expense</div>
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
@@ -85,7 +85,7 @@
                 </div>
               </div>
             </div>
-            </a>
+
             <!-- Earnings (Monthly) Card Example -->
 
 

@@ -7,6 +7,10 @@ use Illuminate\Http\Request;
 
 class ExpensesController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function all()
     {
         $expenses = Expenses::all();
@@ -18,7 +22,7 @@ class ExpensesController extends Controller
     {
         $request->validate([
             'expenseName' => 'required|regex:/[a-zA-Z\s]+/',
-            'expenseDate' => 'required',
+            'expenseDate' => 'required|before_or_equal:today',
             'expenseDescription' => 'required',
             'expenseAmount' => 'required|alpha_num',
             'expenseQuantity' => 'required|alpha_num',
