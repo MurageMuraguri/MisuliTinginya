@@ -110,7 +110,6 @@
                                     <th>Contact</th>
                                     <th>ID Number</th>
                                     <th>Salary(KES)</th>
-                                    <th>Photo</th>
                                     <th></th>
                                 </tr>
                                 </thead>
@@ -122,7 +121,6 @@
                                   <th>Contact</th>
                                   <th>ID Number</th>
                                   <th>Salary(KES)</th>
-                                  <th>Photo</th>
                                     <th></th>
                                 </tr>
                                 </tfoot>
@@ -136,7 +134,6 @@
                                     <td>{{$employee->Emp_contact}}</td>
                                     <td>{{$employee->id_number}}</td>
                                     <td>{{$employee->salary}}</td>
-                                    <td>mboto</td>
                                     <td><a href="{{URL::to('employee/edit')}}{{'/'.$employee->Employee_id}}"   class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-b fa-sm text-white-50"></i> EDIT ENTRY</a>
                                       <br>
                                       <br>
