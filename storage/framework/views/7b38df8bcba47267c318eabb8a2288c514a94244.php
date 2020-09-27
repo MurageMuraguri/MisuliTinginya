@@ -38,15 +38,16 @@
         <div id="content">
 
             <!-- navbar -->
-<?php include 'FE/includes/nav.php'; ?>
+<  
         <!-- navbar-->
 
+        <?php $__env->startSection('content'); ?>
             <!-- Begin Page Content -->
             <div class="container-fluid">
 
                 <!-- Page Heading -->
                 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                    <h1 class="h3 mb-0 text-gray-800">Income</h1>
+                    <h1 class="h3 mb-0 text-gray-800">Income edit</h1>
 
                 </div>
                 <?php if($errors->any()): ?>
@@ -197,4 +198,6 @@
 </body>
 
 </html>
-<?php /**PATH /home/mouss/Documents/skul/MisuliTinginya/resources/views/FE/editIncome.blade.php ENDPATH**/ ?>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.nav', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /home/mouss/Documents/skul/MisuliTinginya/resources/views/FE/editIncome.blade.php ENDPATH**/ ?>
